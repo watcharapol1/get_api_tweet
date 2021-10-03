@@ -3,10 +3,10 @@ import tweepy
 #############################################################################################
 ################################  TWEEPY SETUP  #################################################
 
-# consumer_key = 'KNY4Zvfpg3ZJw9HEXgYZgpEsV'
-# consumer_secret = 'omlOAjdQViBKm1IKVWQfa0xuPakw6qs8G3YgnVM796KuaEabVz'
-# access_token = '60773330-kwmBd0SRPws1b0xl9EqF6hqOGuzXp0gxU9dX1HKZi'
-# access_token_secret = 'Lxl9jZJIcS2QresKsaRaSEcxcCly5JVuA6gVBtrveY9Eh'
+consumer_key = 'KNY4Zvfpg3ZJw9HEXgYZgpEsV'
+consumer_secret = 'omlOAjdQViBKm1IKVWQfa0xuPakw6qs8G3YgnVM796KuaEabVz'
+access_token = '60773330-kwmBd0SRPws1b0xl9EqF6hqOGuzXp0gxU9dX1HKZi'
+access_token_secret = 'Lxl9jZJIcS2QresKsaRaSEcxcCly5JVuA6gVBtrveY9Eh'
 
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
