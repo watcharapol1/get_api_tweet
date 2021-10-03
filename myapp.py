@@ -21,7 +21,7 @@ app = Flask(__name__)
 # #---------------GETTING TWEETS SPECIFIC TO HASHTAG---------------
 @app.route('/', methods=['GET', 'POST'])
 def hash():
-	return render_template('map.html')
+	return 'hello'
 # 	if request.method=='POST':
 # 		hashtag = request.form['hashtag']
 # 		h = tweepy.Cursor(api.search, q = hashtag, lang = "th").items()
