@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter with Python</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/home.css') }}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row cont">
+		<div class="cont-txt">
+			<div class="col-md-12 col-xs-12 col-sm-12">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 col-sm-2 col-xs-2">
+		</div>
+		<div class="col-md-4 col-sm-8 col-xs 8">
+		<div class="t-txt">
+			<h3>Keyword " {{ hashtag }} "</h3>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-2 col-xs-2">
+	</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 col-xs-2 col-sm-2">
+		</div>
+		<div class="col-md-8 col-xs-8 col-sm-8">
+			<div class="tweets">
+				<ul>
+					{% for tweet in h %}
+					<div class="tweet_area">
+						<li>
+							{{ tweet.text }}
+						</li>
+					</div>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-2 col-xs-2 col-sm-2">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
