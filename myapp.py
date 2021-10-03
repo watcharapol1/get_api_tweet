@@ -1,25 +1,25 @@
-from flask import Flask, render_template, request, redirect, url_for, session, g, flash
+from flask import Flask, render_template, request
 import tweepy 
-
 #############################################################################################
 ################################  TWEEPY SETUP  #################################################
 
-consumer_key = 'KNY4Zvfpg3ZJw9HEXgYZgpEsV'
-consumer_secret = 'omlOAjdQViBKm1IKVWQfa0xuPakw6qs8G3YgnVM796KuaEabVz'
-access_token = '60773330-kwmBd0SRPws1b0xl9EqF6hqOGuzXp0gxU9dX1HKZi'
-access_token_secret = 'Lxl9jZJIcS2QresKsaRaSEcxcCly5JVuA6gVBtrveY9Eh'
+# consumer_key = 'KNY4Zvfpg3ZJw9HEXgYZgpEsV'
+# consumer_secret = 'omlOAjdQViBKm1IKVWQfa0xuPakw6qs8G3YgnVM796KuaEabVz'
+# access_token = '60773330-kwmBd0SRPws1b0xl9EqF6hqOGuzXp0gxU9dX1HKZi'
+# access_token_secret = 'Lxl9jZJIcS2QresKsaRaSEcxcCly5JVuA6gVBtrveY9Eh'
 
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
-##############################################################################################
+# auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+# auth.set_access_token(access_token, access_token_secret)
+# api = tweepy.API(auth)
+# ##############################################################################################
 
-app = Flask(__name__) 
+# app = Flask(__name__) 
  
 
 # #---------------GETTING TWEETS SPECIFIC TO HASHTAG---------------
-@app.route('/', methods=['GET', 'POST'])
+# @app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def hash():
 	return 'hello'
 # 	if request.method=='POST':
