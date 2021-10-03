@@ -26,7 +26,7 @@ def hash():
 		h = tweepy.Cursor(api.search, q = hashtag, lang = "th").items()
 		return render_template('hash.html', h = h, hashtag = hashtag)
 
-	return render_template('m	ap.html')
+	return render_template('map.html')
 
 
 if (__name__ == "__main__"):
