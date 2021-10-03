@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import tweepy 
+# import tweepy 
 #############################################################################################
 ################################  TWEEPY SETUP  #################################################
 
@@ -14,7 +14,7 @@ import tweepy
 # api = tweepy.API(auth)
 # ##############################################################################################
 
-# app = Flask(__name__) 
+app = Flask(__name__) 
  
 
 # #---------------GETTING TWEETS SPECIFIC TO HASHTAG---------------
