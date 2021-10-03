@@ -21,13 +21,13 @@ app = Flask(__name__)
 # @app.route('/', methods=['GET', 'POST'])
 @app.route('/')
 def hash():
-	return 'hello'
+# 	return 'hello'
 # 	if request.method=='POST':
 # 		hashtag = request.form['hashtag']
 # 		h = tweepy.Cursor(api.search, q = hashtag, lang = "th").items()
 # 		return render_template('hash.html', h = h, hashtag = hashtag)
 
-# 	return render_template('map.html')
+	return render_template('map.html')
 
 
 if (__name__ == "__main__"):
