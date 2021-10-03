@@ -15,5 +15,5 @@ Werkzeug==1.0.1
 git+https://github.com/tweepy/tweepy@master
 gunicorn==20.1.0
 pandas
-unixodbc 
+
 unixodbc-dev
