@@ -10,8 +10,11 @@ server = '192.168.75.126'
 database = 'DB_OpenData' 
 username = 'sa' 
 password = 'Bj4free' 
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
-cursor = cnxn.cursor()
+# cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+conn = pyodbc.connect('DRIVER={FreeTDS};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password';TDS_VERSION=7.2')
+cursor = conn.cursor()
+
+
 
 #############################################################################################
 ################################  TWEEPY SETUP  #############################################
@@ -43,7 +46,7 @@ def hash():
 		
 		for index, row in tweet_df.iterrows():
 			cursor.execute("INSERT INTO dbo.data_tweet (date_time,tweet_text,retweet) values(?,?,?)", row.time_stamp, row.text, row.retweet_count)
-			cnxn.commit()
+			conn.commit()
 
 		cursor.close()
 		return render_template('hash.html', h = h, hashtag = hashtag)
