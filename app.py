@@ -1,18 +1,18 @@
 from flask import Flask, render_template, request
 import tweepy 
-import pyodbc 
+# import pyodbc 
 import pandas as pd
 
 #############################################################################################
 ################################  DB SETUP  #################################################
 
-server = '192.168.75.126' 
-database = 'DB_OpenData' 
-username = 'sa' 
-password = 'Bj4free' 
-conn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
-# conn = pyodbc.connect('DRIVER={FreeTDS};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password+';TDS_VERSION=7.2')
-cursor = conn.cursor()
+# server = '192.168.75.126' 
+# database = 'DB_OpenData' 
+# username = 'sa' 
+# password = 'Bj4free' 
+# conn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+# # conn = pyodbc.connect('DRIVER={FreeTDS};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password+';TDS_VERSION=7.2')
+# cursor = conn.cursor()
 
 
 
@@ -61,15 +61,15 @@ def insert():
 	hashtag = value
 
 	h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
-	data_tweet = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
+# 	data_tweet = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
 
-	users_locs = [[ tweet.created_at, tweet.text, tweet.user.followers_count,tweet.retweet_count, tweet.favorite_count] for tweet in data_tweet]
+# 	users_locs = [[ tweet.created_at, tweet.text, tweet.user.followers_count,tweet.retweet_count, tweet.favorite_count] for tweet in data_tweet]
 
-	tweet_df = pd.DataFrame(data=users_locs, columns=['time_stamp', 'text', 'followers_count', 'retweet_count','favorite_count'])
+# 	tweet_df = pd.DataFrame(data=users_locs, columns=['time_stamp', 'text', 'followers_count', 'retweet_count','favorite_count'])
 	
-	for index, row in tweet_df.iterrows():
-		cursor.execute("INSERT INTO dbo.data_tweet (date_time,tweet_text,retweet) values(?,?,?)", row.time_stamp, row.text, row.retweet_count)
-		conn.commit()
+# 	for index, row in tweet_df.iterrows():
+# 		cursor.execute("INSERT INTO dbo.data_tweet (date_time,tweet_text,retweet) values(?,?,?)", row.time_stamp, row.text, row.retweet_count)
+# 		conn.commit()
 		
 
 	return render_template('hash.html', h = h, hashtag = hashtag)
