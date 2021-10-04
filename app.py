@@ -54,11 +54,11 @@ def hash():
 	return render_template('map.html')
 
 #---------------GETTING TWEETS SCHEDULER---------------
-@app.route('/insert_tweet', methods=['GET', 'POST'])
+@app.route('/insert_tweet/<string>', methods=['GET', 'POST'])
 def insert():
     	
 	# hashtag = '#JWD' # Simple 
-	hashtag = '$value'
+	hashtag = 'value'
 
 	h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
 # 	data_tweet = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
