@@ -58,7 +58,7 @@ def hash():
 def insert():
     	
 	# hashtag = '#JWD' # Simple 
-	hashtag = value
+	hashtag = '$value'
 
 	h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
 # 	data_tweet = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
