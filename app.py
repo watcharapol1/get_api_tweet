@@ -54,7 +54,7 @@ def hash():
 	return render_template('map.html')
 
 #---------------GETTING TWEETS SCHEDULER---------------
-@app.route('/insert_tweet/<string>', methods=['GET', 'POST'])
+@app.route('/insert_tweet', methods=['GET', 'POST'])
 def insert():
     	
 	# hashtag = '#JWD' # Simple 
