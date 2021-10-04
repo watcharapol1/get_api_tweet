@@ -11,7 +11,7 @@ database = 'DB_OpenData'
 username = 'sa' 
 password = 'Bj4free' 
 # cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
-conn = pyodbc.connect('DRIVER={FreeTDS};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password';TDS_VERSION=7.2')
+conn = pyodbc.connect('DRIVER={FreeTDS};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password+';TDS_VERSION=7.2')
 cursor = conn.cursor()
 
 
