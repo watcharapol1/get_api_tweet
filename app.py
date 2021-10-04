@@ -53,30 +53,6 @@ def hash():
 
 	return render_template('map.html')
 
-#---------------GETTING TWEETS SCHEDULER---------------
-@app.route('/insert_tweet', methods=['GET', 'POST'])
-def insert():
-    	
-	# hashtag = '#JWD' # Simple 
-	hashtag = 'value'
-
-	h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
-# 	data_tweet = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
-
-# 	users_locs = [[ tweet.created_at, tweet.text, tweet.user.followers_count,tweet.retweet_count, tweet.favorite_count] for tweet in data_tweet]
-
-# 	tweet_df = pd.DataFrame(data=users_locs, columns=['time_stamp', 'text', 'followers_count', 'retweet_count','favorite_count'])
-	
-# 	for index, row in tweet_df.iterrows():
-# 		cursor.execute("INSERT INTO dbo.data_tweet (date_time,tweet_text,retweet) values(?,?,?)", row.time_stamp, row.text, row.retweet_count)
-# 		conn.commit()
-		
-
-	return render_template('hash.html', h = h, hashtag = hashtag)
-
-	
-
-
 if (__name__ == "__main__"):
 
 	app.debug = True
