@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import tweepy 
-import pyodbc 
+# import pyodbc 
 import pandas as pd
 
 #############################################################################################
