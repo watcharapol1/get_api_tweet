@@ -2,9 +2,6 @@ from flask import Flask, render_template, request
 import tweepy 
 # import pyodbc 
 import pandas as pd
-import schedule
-import time
-import datetime
 
 #############################################################################################
 ################################  DB SETUP  #################################################
@@ -61,8 +58,5 @@ def hash():
 
 
 if (__name__ == "__main__"):
-	schedule.every(5).seconds.do(hash)
-	schedule.run_pending()
-	time.sleep(1)
 	app.debug = True
 	app.run(threaded = True)
