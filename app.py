@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 import tweepy 
 # import pyodbc 
 import pandas as pd
+import schedule
+import time
+import datetime
 
 #############################################################################################
 ################################  DB SETUP  #################################################
@@ -52,6 +55,11 @@ def hash():
 		return render_template('hash.html', h = h, hashtag = hashtag)
 
 	return render_template('map.html')
+
+schedule.every(5).seconds.do(hash)
+
+schedule.run_pending()
+time.sleep(1)
 
 if (__name__ == "__main__"):
 
