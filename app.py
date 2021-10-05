@@ -22,7 +22,7 @@ app = Flask(__name__)
 def hash():
 	if request.method=='POST':
 		hashtag = request.form['hashtag']
-		h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items()
+		h = tweepy.Cursor(api.search_tweets, q = hashtag, lang = "th").items(10)
 		return render_template('hash.html', h = h, hashtag = hashtag)
 
 	return render_template('map.html')
