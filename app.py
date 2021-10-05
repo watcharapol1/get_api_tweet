@@ -52,14 +52,16 @@ def hash():
 		# 	conn.commit()
 
 		# cursor.close()
+		
+		schedule.every(5).seconds.do(hash)
+
+		schedule.run_pending()
+		time.sleep(1)
 		return render_template('hash.html', h = h, hashtag = hashtag)
 
 	return render_template('map.html')
 
-schedule.every(5).seconds.do(hash)
 
-schedule.run_pending()
-time.sleep(1)
 
 if (__name__ == "__main__"):
 
