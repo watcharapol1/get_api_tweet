@@ -53,10 +53,7 @@ def hash():
 
 		# cursor.close()
 		
-		schedule.every(5).seconds.do(hash)
-
-		schedule.run_pending()
-		time.sleep(1)
+		
 		return render_template('hash.html', h = h, hashtag = hashtag)
 
 	return render_template('map.html')
@@ -64,6 +61,8 @@ def hash():
 
 
 if (__name__ == "__main__"):
-
+	schedule.every(5).seconds.do(hash)
+	schedule.run_pending()
+	time.sleep(1)
 	app.debug = True
 	app.run(threaded = True)
